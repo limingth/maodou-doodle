@@ -1,0 +1,42 @@
+<head>
+	<title>Hero</title>
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<div class="outer">
+		<div class="logo"></div>
+		<h1 class="title">Hero</h1>
+		<div class="subtitle">选择一个玩家并给他加分</div>
+		{{> hero}}
+	</div>
+</body>
+
+<template name="hero">
+	<ol class="leaderboard">
+		{{#each players}}
+			{{> player}}
+		{{/each}}
+	</ol>
+
+	{{#if selectedName}}
+		<div class="details">
+			<div class="name">{{selectedName}}</div>
+			<button class="up">顶</button>
+			<button class="down">踩</button>
+			<button class="del">删除</button>
+		</div>
+	{{else}}
+		<div class="message">请选择一个玩家</div>
+	{{/if}}
+</template>
+
+<template name="player">
+	<li class="player {{selected}}">
+		<span class="name">{{name}}</span>
+		<span class="score">{{score}}</span>
+	</li>
+</template>	
+
+
