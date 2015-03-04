@@ -20,6 +20,9 @@ if (Meteor.isClient) {
     },
     'click .down': function () {
       Players.update(Session.get("selectedPlayer"), {$inc: {score: -5}});
+    },
+    'click .name': function () {
+      Players.update(Session.get("selectedPlayer"), {$inc: {score: -5}});
     }
   });
 
