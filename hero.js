@@ -31,7 +31,24 @@ if (Meteor.isClient) {
       Session.set("selectedPlayer", this._id);
     }
   });
+
+  Template.body.events({
+    'submit .add-a-player': function (event) {
+      var name = event.target.name.value;
+
+      Players.insert({
+        name: name,
+        score: Math.floor(Random.fraction() * 10) * 5
+      });
+
+      event.target.name.value = "";
+
+      return false;
+    }
+  });
 }
+
+
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
