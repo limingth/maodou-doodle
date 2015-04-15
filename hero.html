@@ -1,5 +1,5 @@
 <head>
-	<title>Hero</title>
+	<title>毛豆网涂鸦墙</title>
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
 </head>
@@ -7,10 +7,10 @@
 <body>
 	<div class="outer">
 		<div class="logo"></div>
-		<h1 class="title">Hero</h1>
-		<div class="subtitle">选择一个玩家并给他加分</div>
+		<h1 class="title">毛豆网涂鸦墙</h1>
+		<div class="subtitle">你的声音，我们可以听到</div>
 		<form class="add-a-player">
-			<input type="text" name="name" placeholder="添加一名新玩家"/>
+			<input type="text" name="name" placeholder="我来发言" style="width: inherit;"/>
 		</form><br/><br/>
 		{{> hero}}
 	</div>
@@ -26,12 +26,14 @@
 	{{#if selectedName}}
 		<div class="details">
 			<div class="name">{{selectedName}}</div>
-			<button class="up">顶</button>
-			<button class="down">踩</button>
-			<button class="del">删除</button>
+			<!-- 
+			<button class="del"> 删除 </button>
+			<button class="down"> 反对 </button>
+			-->
+			<button class="up"> 支持 </button>
 		</div>
 	{{else}}
-		<div class="message">请选择一个玩家</div>
+		<div class="message">请选择一个意见</div>
 	{{/if}}
 
 </template>
@@ -39,7 +41,8 @@
 <template name="player">
 	<li class="player {{selected}}">
 		<span class="name">{{name}}</span>
-		<span class="score">{{score}}</span>
+		<!-- <span class="score">反对 {{unvote}}</span> -->
+		<span class="score">支持 {{vote}}</span>
 	</li>
 </template>
 
