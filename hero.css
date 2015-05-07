@@ -76,7 +76,7 @@ body {
   line-height: 3em;
   text-align: center;
   vertical-align: middle;
-  width: 3em;
+  width: 1em;
 }
 
 .player .avatar {
@@ -117,7 +117,7 @@ body {
 
 .details .name {
   display: inline-block;
-  font-size: 1.5em;
+  font-size: 12px;
   font-weight: 300;
   line-height: 2.25rem;
   padding-left: 1.25rem;
@@ -152,7 +152,7 @@ body {
   line-height: 1;
   margin: 0;
   outline: none;
-  padding: 10px 20px;
+  padding: 10px 10px;
   transition: all 200ms ease-in;
 }
 

@@ -30,7 +30,10 @@
 			<button class="del"> 删除 </button>
 			<button class="down"> 反对 </button>
 			-->
-			<button class="up"> 支持 </button>
+			{{#if showDel}}
+			<button class="del">删除</button>
+			{{/if}}
+			<button class="up">支持</button>
 		</div>
 	{{else}}
 		<div class="message">请选择一个意见</div>
